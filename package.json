@@ -1,0 +1,23 @@
+{
+  "name": "alphax-playwrightbatch1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LearnMoreTraining/AlphaX-PlaywrightBatch1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/LearnMoreTraining/AlphaX-PlaywrightBatch1/issues"
+  },
+  "homepage": "https://github.com/LearnMoreTraining/AlphaX-PlaywrightBatch1#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.8"
+  }
+}
