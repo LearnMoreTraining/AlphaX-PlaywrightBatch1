@@ -1,11 +1,11 @@
 import {test} from "@playwright/test"
 import {HomePage} from "../pages/homepage"
-import fs from fs
+import fs from 'fs'
 
 const jsonpath = "data/logindata.json"
+const loginData:any =JSON.parse(fs.readFileSync(jsonpath,'utf8'))
 
-
-for(const [username,password] of loginTestData){
+for(const {username,password} of loginData){
 
     test(`login  validation ${username} and ${password} `, async ({page})=>{
 
