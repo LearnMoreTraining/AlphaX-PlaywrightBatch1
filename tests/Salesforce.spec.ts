@@ -22,10 +22,7 @@ for(const data of record){
 
     test(`login  validation ${data.email} and ${data.password} `, async ({page})=>{
 
-    await page.goto("https://login.salesforce.com/")
-   
-   await page.locator("#username").fill(data.email)
-    await page.locator("#password").fill(data.password)  
+
      console.log(data.email)
      console.log(data.password)
 
