@@ -9,15 +9,16 @@ export class HomePage{
     constructor(page:Page){
        this.page = page //local variable   
        this.searchIcon = this.page.locator('#nav-search-submit-button') 
-       this.productname = "Search Amazon.in"
+       this.productname = "#twotabsearchtextbox"
     }
 
     //action methods 
-   public async enterProductName(productName:string):Promise<void>{
-        await this.page.getByPlaceholder(this.productname).fill(productName)
+   public async enterProductName(product:string){
+        console.log('product is'+product)
+        await this.page.locator(this.productname).fill(product)
     }
 
-   public async clickSearchIcon():Promise<void>{
+   public async clickSearchIcon(){
         await this.searchIcon.click()
     }
 
