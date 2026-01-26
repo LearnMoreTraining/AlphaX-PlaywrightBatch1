@@ -1,4 +1,4 @@
-import {test} from '@playwright/test'
+import {test,expect} from '@playwright/test'
 import {LoginPage} from '../pages/SalesForceLoginPage'
 import {RandomDataGenerator} from '../utils/randomDataGenerator'
 import {TestConfig} from '../test.config'
@@ -22,12 +22,15 @@ test('error message validation @regression @test1',async ()=>{
         await  login.enterPassword(RandomDataGenerator.getPassword(8))
         console.log(RandomDataGenerator.getPassword(8))
         await  login.clickLogin()
+        expect(login.getErrorMessage()).toEqual("Error: Please check your username and password. If you still can't log in, contact your Salesforce administrator.")      
 })
 
 
 test('search result',{tag:'@test2'},async ()=>{
-        const filePath = "data/searchproduct.json"
-       const productLists:any = DataProvider.getTestDatafromJson(filePath)
+     //   const filePath = "data/searchproduct.json"
+     //  const productLists:any = DataProvider.getTestDatafromJson(filePath)
+         const filePath = "data/searchproduct.csv"
+      const productLists:any= DataProvider.getTestDataFromCsv(filePath)
        for(const product of productLists){
                 console.log(product)
                 console.log(product.productName)

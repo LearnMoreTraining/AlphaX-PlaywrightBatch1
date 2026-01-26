@@ -25,8 +25,8 @@ export class DataProvider{
     public static  getTestDataFromCsv(filepath:string){
         
         let file = fs.readFileSync(filepath)
-      let val =  parse(file,{columns:true,skip_empty_lines:true})
-      return val;
+        let val =  parse(file,{columns:true,skip_empty_lines:true})
+        return val;
 
     }
 

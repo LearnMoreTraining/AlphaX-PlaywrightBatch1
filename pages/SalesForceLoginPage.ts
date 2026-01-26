@@ -7,12 +7,14 @@ export class LoginPage{
     private usernameTextBox:Locator
     private passwordTextBox:string
     private loginButton:Locator
+    private errorTextMessage:Locator
 
     constructor(page:Page){
        this.page = page //local variable   
        this.usernameTextBox = this.page.locator("#username")
        this.passwordTextBox = "#password"
        this.loginButton=  this.page.locator("#Login")
+       this.errorTextMessage = this.page.locator("#error")
     }
 
     //action methods 
@@ -26,6 +28,10 @@ export class LoginPage{
 
     public async clickLogin(){
            await this.loginButton.click()
+    }
+
+    public async getErrorMessage(){
+         return  await this.errorTextMessage.innerHTML()
     }
 
    
